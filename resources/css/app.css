@@ -1,0 +1,50 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+/* .color{
+    @apply bg-blue-300;
+} */
+
+/* .background-style{
+    @apply:bg-center,bg-no-repeat,background-color:#fff,overflow-x:hidden,transition:all 200ms linear,background-image:url('images/pat-back.svg');
+} */
+
+.header{
+    position:absolute;
+    top:0px; left:0px;
+     height:200px;
+     right:0px;
+     overflow:hidden;
+}
+.content{
+    position:absolute;
+     top:200px;
+     bottom:200px;
+     left:0px;
+      right:0px;
+    overflow:auto;
+}
+.footer{
+    position:absolute;
+     bottom:0px;
+      height:200px;
+      left:0px;
+      right:0px;
+       overflow:hidden;
+}
+.body-style{
+    height:100%;
+    width:100%;
+}
+/* .background-image{
+    background-image: url('images/pat-back.svg');
+	background-position: center;
+	background-repeat: repeat;
+	background-size: 7%;
+	background-color: #fff;
+	overflow-x: hidden;
+    transition: all 200ms linear;
+} */
