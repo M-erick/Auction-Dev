@@ -28,7 +28,13 @@
         </div>
     @endif
 
-    <div class="min-h-screen flex items-center justify-center">
+    <div class=" min-h-screen flex items-center justify-center" style=" background-image: url('images/pat-back.svg');background-position: center;	background-repeat: repeat; 	background-size: 7%;	background-color: #fff;	overflow-x: hidden;    transition: all 200ms linear;
+
+
+
+
+
+    ">
         <div class="flex flex-col justify-around h-full">
             <div>
                 <h1 class="mb-6 text-gray-600 text-center font-light tracking-wider text-4xl sm:mb-8 sm:text-6xl">

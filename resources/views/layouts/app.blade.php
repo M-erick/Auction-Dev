@@ -18,11 +18,11 @@
     @stack('styles')
 </head>
 
-<body class="background-imag h-screen antialiased leading-none font-sans">
+<body class=" h-screen antialiased leading-none font-sans">
     <div id="app">
         <div class="fixed   w-full z-50 top-0">
             <header class="bg-gray-800 ">
-                <div class="container mx-auto flex justify-between items-center px-6">
+                <div class="container mx-auto flex justify-between items-center pt-2 px-4">
                     <div>
                         <a href="{{ url('/') }}" class="text-lg font-semibold text-gray-100 no-underline">
                             {{ config('app.name', 'Auction') }}
@@ -30,7 +30,6 @@
                         </a>
                     </div>
                     <nav class="space-x-4 text-gray-300 text-sm sm:text-base">
-                        <a class="no-underline hover:underline" href="{{ route('howTo') }} ">HowTo</a>
 
                         @guest
                             <a class="no-underline hover:underline" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -44,8 +43,9 @@
                             1.Buy shares
                             2.Sell shares --}}
 
-                            <a href="{{ route('logout') }}" class="no-underline hover:underline" onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                            <a href="{{ route('logout') }}" class="no-underline hover:underline"
+                                onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
                                 {{ csrf_field() }}
                             </form>
@@ -54,34 +54,43 @@
                     </nav>
 
                 </div>
-                <div class=" bg-gray-800 py-6 container mx-auto flex  justify-evenly space-x-1 text-white px-6">
-                    <a class="no-underline hover:underline" href="{{ route('howTo') }} ">BUY</a>
-                    <a class="no-underline hover:underline" href="{{ route('howTo') }} ">SELL</a>
-                    <a class="no-underline hover:underline" href="{{ route('howTo') }} ">Profile</a>
+                @if (Auth::check())
+                    <div class=" bg-gray-800 py-6 container mx-auto flex  justify-evenly text-white  ">
+                        <a class="no-underline hover:underline" href="{{ route('buy') }} ">BUY</a>
+                        <a class="no-underline hover:underline" href="{{ route('sell') }} ">SELL</a>
+
+                        <a class="no-underline hover:underline" href="{{ route('howTo') }} ">Profile</a>
 
 
 
 
 
 
-                </div>
+                    </div>
+
+                @endif
+
+
             </header>
         </div>
 
 
-        <div>
+        <div >
             @yield('content')
             {{-- @if (Auth::check()) --}}
         </div>
 
 
         {{-- the footer should be static --}}
-        <div>
-            @include('layouts.footer')
 
-            {{-- @endif --}}
+        @if (Auth::check())
+            <div>
+                @include('layouts.footer')
 
-        </div>
+                {{-- @endif --}}
+
+            </div>
+        @endif
 
 
     </div>
