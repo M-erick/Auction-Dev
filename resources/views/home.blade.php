@@ -11,7 +11,7 @@
         </div>
         @endif
 
-        <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm ">
+        <section class="flex flex-col  break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm ">
 
             {{-- <header class="font-semibold bg-gray-200 text-gray-700 py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
                 Dashboard
@@ -19,7 +19,7 @@
             {{-- </header> --}}
 
             <div class="color min-h-screen pt-20 pb-5 px-1 ">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-x-10 xl-grid-cols-4 gap-y-10 gap-x-6 ">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 lg:m-2 md:gap-x-10 xl-grid-cols-4 gap-y-10 gap-x-6 ">
 
                     <div class="container max-w-screen-2xl shadow-lg rounded-lg  hover:shadow-2xl transition duration-300">
                         <img src="images/dollar02.jpg" alt="" class="rounded-t-lg w-full">

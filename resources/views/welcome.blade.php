@@ -20,6 +20,8 @@
             @auth
                 <a href="{{ url('/home') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Home') }}</a>
             @else
+            <a href="{{ route('howTo') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('HowItWorks') }}</a>
+
                 <a href="{{ route('login') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Login') }}</a>
                 @if (Route::has('register'))
                     <a href="{{ route('register') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Register') }}</a>

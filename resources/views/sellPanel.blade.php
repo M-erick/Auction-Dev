@@ -2,7 +2,7 @@
 @section('content')
     <!-- component -->
     <div class="bg-gray-50 min-h-screen pb-3  mt-28 ">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-x-10 xl-grid-cols-4 gap-y-3 gap-x-6 ">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 md:m-2 md:gap-x-10 xl-grid-cols-4 gap-y-3 gap-x-6 ">
 
             <div class="container bg-white  w-full border-b border-gray-300 ">
                 {{-- <img src="images/dollars.webp" alt="" class=" w-full"> --}}

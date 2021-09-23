@@ -1,18 +1,73 @@
 @extends('layouts.app')
 @section('content')
     <!-- component -->
-    <div class="bg-gray-50 min-h-screen pb-3  mt-10">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-x-10 xl-grid-cols-4 gap-y-3 gap-x-6 ">
+    <div class="bg-gray-50 min-h-screen pb-3   m-auto mt-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 md:m-2 md:gap-x-10 xl-grid-cols-4 gap-y-3 gap-x-6 ">
 
             <div class="container bg-white  w-full border-b  border-gray-300 ">
+                {{-- bid success message --}}
+                @if (session()->has('message'))
+                    <div class="w-full m-auto mt-10 p-auto">
+                        <p class="w-full mb-4 text-gray-50 bg-gray-500 rounded-2xl py-4">
+                            {{ session()->get('message') }}
+
+                        </p>
+
+                    </div>
+
+                @endif
 
 
-                {{-- <img src="images/dollars.webp" alt="" class=" w-full"> --}}
+                {{-- display error messages if any  --}}
+                @if ($errors->any())
+                    <div class="w-4/5 self-center m-auto p-6">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li class="w-full mb-4 text-gray-50 bg-red-700 rounded-2xl  p-4">
+
+                                    {{ $error }}
+                                </li>
+
+                            @endforeach
+                        </ul>
+
+                    </div>
+
+                @endif
                 <div class="p-6">
-                        <x-buy-form/>
+
+
+                    <x-buy-form />
                 </div>
             </div>
             {{-- card two --}}
+
+            <div class="container   bg-white w-full   border-t border-b border-gray-300 ">
+                {{-- <img src="images/dollars.webp" alt="" class=" w-full"> --}}
+
+                <div class="p-6">
+                    {{-- pseoudocode .display currently placed bid.Apply JS vuejs code to  computed properties --}}
+
+                    @foreach ($usersData as $data)
+                    @if ($data->name == auth()->user()->name)
+                    <h1 class="md:text-1xl text-xl hover:text-indigo-600 transition duration-200  font-bold text-gray-900 ">
+                        currently bought shares history in table Form.</h1>
+                    <p> Number  of Days :{{ $data->days }}</p>
+                    <p>Amount  placed :{{ $data->amount }}</p>
+
+                    @endif
+
+
+                    @endforeach
+                    <h1 class="md:text-1xl text-xl hover:text-indigo-600 transition duration-200  font-bold text-gray-900 ">
+                        currently bought shares history in table Form.</h1>
+
+
+
+
+
+                </div>
+            </div>
 
             <div class="container w-full   bg-white border-t border-b border-gray-300 ">
                 {{-- <img src="images/dollars.webp" alt="" class=" w-full"> --}}
@@ -28,16 +83,12 @@
                 </div>
             </div>
 
-            <div class="container   bg-white w-full   border-t border-b border-gray-300 ">
-                {{-- <img src="images/dollars.webp" alt="" class=" w-full"> --}}
-                <div class="p-6">
-                    <h1 class="md:text-1xl text-xl hover:text-indigo-600 transition duration-200  font-bold text-gray-900 ">
-                        bought shares history in table Form.</h1>
 
 
 
-                </div>
-            </div>
+
+
+
 
         </div>
     </div>
