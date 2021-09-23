@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FormController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,12 +21,12 @@ Auth::routes();
 
 Route::view('/dashboard', 'frontPage');
 
-Route::view('/SellShares', 'sellPanel');
+Route::view('/SellShares', 'sellPanel')->name('sell');
 
-Route::view('/BuyShares', 'buyPanel');
+//Route::view('/BuyShares', 'buyPanel');
 Route::view('/HowTo', 'howTo')->name('howTo');
 
-
+Route::resource('/BuyShares', FormController::class)->name('index','buy');
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

@@ -22,7 +22,7 @@
     <div id="app">
         <div class="fixed   w-full z-50 top-0">
             <header class="bg-gray-800 ">
-                <div class="container mx-auto flex justify-between items-center pt-2 px-4">
+                <div class="container mx-auto flex justify-between items-center pt-3 px-4">
                     <div>
                         <a href="{{ url('/') }}" class="text-lg font-semibold text-gray-100 no-underline">
                             {{ config('app.name', 'Auction') }}
@@ -55,11 +55,12 @@
 
                 </div>
                 @if (Auth::check())
-                    <div class=" bg-gray-800 py-6 container mx-auto flex  justify-evenly text-white  ">
-                        <a class="no-underline hover:underline" href="{{ route('buy') }} ">BUY</a>
-                        <a class="no-underline hover:underline" href="{{ route('sell') }} ">SELL</a>
+                    <div class=" bg-gray-800 pt-4 pb-6 container   mx-auto flex  justify-evenly text-white  ">
+                                                <a class="no-underline  hyper-style" href="{{ route('home') }} ">DASHBOARD</a>
 
-                        <a class="no-underline hover:underline" href="{{ route('howTo') }} ">Profile</a>
+                        <a class="no-underline hyper-style " href="{{ route('buy') }} ">BUY</a>
+                        <a class="no-underline  hyper-style" href="{{ route('sell') }} ">SELL</a>
+
 
 
 
