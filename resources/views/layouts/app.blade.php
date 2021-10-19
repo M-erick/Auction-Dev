@@ -16,6 +16,7 @@
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     @stack('styles')
+    @yield('scripts')
 </head>
 
 <body class=" h-screen antialiased leading-none font-sans">

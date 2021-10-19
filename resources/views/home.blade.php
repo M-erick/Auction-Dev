@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
     <main class="sm:container sm:mx-auto sm:mt-10 mt-10">
         <div class="w-full >
@@ -19,7 +18,8 @@
             {{-- </header> --}}
 
             <div class="color min-h-screen pt-20 pb-5 px-1 ">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 lg:m-2 md:gap-x-10 xl-grid-cols-4 gap-y-10 gap-x-6 ">
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 lg:m-2 md:gap-x-10 xl-grid-cols-4 gap-y-10 gap-x-6  ">
 
                     <div class="container max-w-screen-2xl shadow-lg rounded-lg  hover:shadow-2xl transition duration-300">
                         <img src="images/dollar02.jpg" alt="" class="rounded-t-lg w-full">
@@ -33,46 +33,42 @@
                         </div>
                     </div>
                     {{-- card two --}}
+                    {{-- add timer details --}}
 
-                    <div class="container mx-auto shadow-lg rounded-lg max-w-md hover:shadow-2xl transition duration-300">
+                    <div
+                        class="container mx-auto shadow-lg rounded-lg max-w-md hover:shadow-2xl transition duration-300  mb-5">
 
-                        <div class="p-6">
-                            <h1
-                                class="md:text-1xl text-xl hover:text-indigo-600 transition duration-200  font-bold text-gray-900 ">
-                                This is Amazing for people to visit.</h1>
-                            <p class="text-gray-700 my-2 hover-text-900 ">Lorem ipsum dolor sit amet consectetur adipisicing
-                                elit.
-                                Praesentium quis.</p>
-                        </div>
+                       <x-timer/>
+
+
                     </div>
-
-                    <div class="container max-w-screen-2xl shadow-lg rounded-lg  hover:shadow-2xl transition duration-300">
-                        <img src="images/dollars.webp" alt="" class="rounded-t-lg w-full">
-                        <div class="p-6">
-                            <h1
-                                class="md:text-1xl text-xl hover:text-indigo-600 transition duration-200  font-bold text-gray-900 ">
-                                This is Amazing for people to visit.</h1>
-                            <p class="text-gray-700 my-2 hover-text-900 ">Lorem ipsum dolor sit amet consectetur adipisicing
-                                elit.
-                                Praesentium quis.</p>
-                        </div>
-                    </div>
-
-                    {{-- last card --}}
-
-                    <div class="container max-w-screen-2xl shadow-lg rounded-lg  hover:shadow-2xl transition duration-300">
-                        <img src="images/money.jpg" alt="" class="rounded-t-lg w-full">
-                        <div class="p-6">
-                            <h1
-                                class="md:text-1xl text-xl hover:text-indigo-600 transition duration-200  font-bold text-gray-900 ">
-                                This is Amazing for people to visit.</h1>
-                            <p class="text-gray-700 my-2 hover-text-900 ">Lorem ipsum dolor sit amet consectetur adipisicing
-                                elit.
-                                Praesentium quis.</p>
-                        </div>
-                    </div>
-
                 </div>
+
+
+                {{-- last card --}}
+
+                <div class="container max-w-screen-2xl shadow-lg rounded-lg  hover:shadow-2xl transition duration-300 mb-5">
+                    {{-- <img src="images/money.jpg" alt="" class="rounded-t-lg w-full"> --}}
+                    <div class="p-6">
+                        <h1
+                            class="md:text-1xl text-xl hover:text-indigo-600 transition duration-200  font-bold text-gray-900 ">
+                           Available Shares .</h1>
+                        <p class="text-gray-700 my-2 hover-text-900 ">Notification Panel .<br/>
+                        Admin panel</p>
+                    </div>
+                </div>
+                <div class="container max-w-screen-2xl shadow-lg rounded-lg  hover:shadow-2xl transition duration-300">
+                    {{-- <img src="images/money.jpg" alt="" class="rounded-t-lg w-full"> --}}
+                    <div class="p-6">
+                        <h1
+                            class="md:text-1xl text-xl hover:text-indigo-600 transition duration-200  font-bold text-gray-900 ">
+                            News/Admin Panel.</h1>
+                        <p class="text-gray-700 my-2 hover-text-900 ">Notification Panel .<br/>
+                        Admin panel</p>
+                    </div>
+                </div>
+
+            </div>
             </div>
 
 
@@ -80,3 +76,4 @@
         </div>
     </main>
 @endsection
+
