@@ -34,11 +34,13 @@
                     </div>
 
                 @endif
+
                 <div class="p-6">
 
 
                     <x-buy-form />
                 </div>
+
             </div>
             {{-- card two --}}
 
@@ -46,14 +48,28 @@
                 {{-- <img src="images/dollars.webp" alt="" class=" w-full"> --}}
 
                 <div class="p-6">
-                    {{-- pseoudocode .display currently placed bid.Apply JS vuejs code to  computed properties --}}
+                    {{-- pseoudocode .display currently
+                        placed bid.Apply JS vuejs code to  computed properties --}}
 
                     @foreach ($usersData as $data)
-                    @if ($data->name == auth()->user()->name)
-                    <h1 class="md:text-1xl text-xl hover:text-indigo-600 transition duration-200  font-bold text-gray-900 ">
+
+                    @if ($data->name == Auth::user()->name)
+
+
+                    <h1 class="md:text-1xl text-xl   font-bold text-gray-900 ">
                         currently bought shares history in table Form.</h1>
-                    <p> Number  of Days :{{ $data->days }}</p>
+                        <p>Amount  placed :{{ $data->days }}</p>
+
+
+
                     <p>Amount  placed :{{ $data->amount }}</p>
+                    {{-- <p>Date  placed :{{ $temp[0] }}</p>
+                    <p>Date  placed :{{ $temp[1] }}</p> --}}
+
+
+
+                    {{-- <p>Amount  placed :{{ $data->created_at }}</p> --}}
+
 
                     @endif
 

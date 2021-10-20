@@ -43,7 +43,7 @@
                                     fill="white" />
                             </svg>
                         </a>
-                       
+
                     </div>
                 </div>
                 <hr class="border-gray-600" />

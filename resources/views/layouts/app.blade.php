@@ -12,11 +12,9 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-    @stack('styles')
-    @yield('scripts')
+    @stack('scripts')
 </head>
 
 <body class=" h-screen antialiased leading-none font-sans">
@@ -46,7 +44,7 @@
 
                             <a href="{{ route('logout') }}" class="no-underline hover:underline"
                                 onclick="event.preventDefault();
-                                                        document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                                                            document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
                                 {{ csrf_field() }}
                             </form>
@@ -57,7 +55,7 @@
                 </div>
                 @if (Auth::check())
                     <div class=" bg-gray-800 pt-4 pb-6 container   mx-auto flex  justify-evenly text-white  ">
-                                                <a class="no-underline  hyper-style" href="{{ route('home') }} ">DASHBOARD</a>
+                        <a class="no-underline  hyper-style" href="{{ route('home') }} ">DASHBOARD</a>
 
                         <a class="no-underline hyper-style " href="{{ route('buy') }} ">BUY</a>
                         <a class="no-underline  hyper-style" href="{{ route('sell') }} ">SELL</a>
@@ -77,7 +75,7 @@
         </div>
 
 
-        <div >
+        <div>
             @yield('content')
             {{-- @if (Auth::check()) --}}
         </div>

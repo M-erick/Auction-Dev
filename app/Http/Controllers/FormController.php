@@ -6,6 +6,8 @@ use App\Models\Form;
 use App\Rules\daysValidate;
 use Illuminate\Http\Request;
 use App\Rules\currencyValidate;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class FormController extends Controller
 {
@@ -16,9 +18,11 @@ class FormController extends Controller
      */
     public function index()
     {
-       // $post = Form::all();
-        //dd($post);
-       return view('buyPanel')->with('usersData',Form::get());
+
+       // $date = Carbon::parse()
+        //$date = Carbon::parse($times)
+       // dd(Form::where('created_at','=',Carbon::now()));
+       return view('buyPanel')->with('usersData',Form::whereDate('created_at', '=' ,Carbon::today()->toDateString())->get());
     }
 
     /**

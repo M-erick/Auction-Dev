@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\FormController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,7 @@ Route::get('/', function () {
 });
 Auth::routes();
 
-Route::view('/dashboard', 'frontPage');
+// Route::view('/dashboard', 'frontPage')->name('dashboard');
 
 Route::view('/SellShares', 'sellPanel')->name('sell');
 
