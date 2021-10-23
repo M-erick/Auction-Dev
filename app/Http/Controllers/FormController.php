@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Form;
-use App\Rules\daysValidate;
-use Illuminate\Http\Request;
-use App\Rules\currencyValidate;
 use Carbon\Carbon;
+use App\Models\Form;
+use Illuminate\Http\Request;
+use App\Http\Requests\StoreRequest;
 use Illuminate\Support\Facades\Auth;
 
 class FormController extends Controller
@@ -19,10 +18,10 @@ class FormController extends Controller
     public function index()
     {
 
-       // $date = Carbon::parse()
-        //$date = Carbon::parse($times)
-       // dd(Form::where('created_at','=',Carbon::now()));
-       return view('buyPanel')->with('usersData',Form::whereDate('created_at', '=' ,Carbon::today()->toDateString())->get());
+      //Returns an array of all events created that day
+
+       return view('buyPanel')->with('usersData',
+       Form::whereDate('created_at', '=' ,Carbon::today()->toDateString())->get());
     }
 
     /**
@@ -41,16 +40,11 @@ class FormController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
-        //dd($request);
-        $request->validate([
-            //dayValidate  and currencyValidate rules for validation(create errors)
+        //StorRequest class handles use input validation
 
-            'days' =>'required|min:1 |max:1' ,new daysValidate,
-            'amount'=>'required', new currencyValidate  ,
 
-        ]);
 
         Form::create([
 
