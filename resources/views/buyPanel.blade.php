@@ -50,14 +50,18 @@
                 <div class="p-6">
                     {{-- pseoudocode .display currently
                         placed bid.Apply JS vuejs code to  computed properties --}}
+                        {{-- <h1 class="md:text-1xl text-xl   font-bold text-gray-900 ">
+                            currently bought shares history in table Form.</h1> --}}
+                            <h1 class="md:text-1xl text-xl hover:text-indigo-600 transition duration-200  font-bold text-gray-900 ">
+                                currently bought shares history in table Form.</h1>
 
                     @foreach ($usersData as $data)
 
-                    @if ($data->name == Auth::user()->name)
+
+                    @if ($data->name == auth()->user()->name)
 
 
-                    <h1 class="md:text-1xl text-xl   font-bold text-gray-900 ">
-                        currently bought shares history in table Form.</h1>
+
                         <p>Amount  placed :{{ $data->days }}</p>
 
 
@@ -75,8 +79,7 @@
 
 
                     @endforeach
-                    <h1 class="md:text-1xl text-xl hover:text-indigo-600 transition duration-200  font-bold text-gray-900 ">
-                        currently bought shares history in table Form.</h1>
+
 
 
 
