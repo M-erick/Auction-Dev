@@ -13,9 +13,9 @@
                     <div class="  flex  justify-between items-center  w-full  py-5  border-b-2 border-gray-200 ">
 
                         {{-- <p class="text-gray-400 ml-4">Days</p> --}}
-                        <label for="Days" class="text-gray-400 ml-4  outline-none">Days:</label>
+                        <label for="Days" class="text-gray-400 ml-4  " >Days:</label>
                         {{-- <p class="text-black mr-4">$2,650</p> --}}
-                        <input type="text" class="text-black mr-4" name="days" placeholder="4 days">
+                        <input type="text" class="text-black mr-4 outline-none" name="days" placeholder="4 days" autocomplete="off">
 
                     </div>
 
@@ -24,7 +24,7 @@
 
 
                         <label for="" class="text-gray-400 ml-4 mr-2 outline-none">Amount:</label>
-                        <input type="text" class="text-black mr-4" name="amount" placeholder="1200">
+                        <input type="text" class="text-black mr-4" name="amount" autocomplete="off" placeholder="1200">
 
                     </div>
 
@@ -38,12 +38,12 @@
 
                     </div>
 
-                    <div class="px-3 py-5 border-b-2 border-gray-200">
+                    {{-- <div class="px-3 py-5 border-b-2 border-gray-200">
                         <button class=" min-w-full bg-gray-400 font-semibold  text-white px-2  py-2 rounded-md  ">
                            Abort
                         </button>
 
-                    </div>
+                    </div> --}}
                 </form>
             </div>
             <!-- end -->
