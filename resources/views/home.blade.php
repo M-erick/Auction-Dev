@@ -30,16 +30,15 @@
 
                     <div class="container max-w-screen-2xl shadow-lg rounded-lg  hover:shadow-2xl transition duration-300">
                         {{-- <img src="images/dollar02.jpg" alt="" class="rounded-t-lg w-full"> --}}
-                        <canvas id="myChart" width="500" height="200"></canvas>
+                        <canvas id="myChart" width="550" height="250" ></canvas>
                         <div class="p-6">
                             <h1
                                 class="md:text-1xl text-xl hover:text-indigo-600 transition duration-200  font-bold text-gray-900 ">
-                                This is Amazing for people to visit.</h1>
-                            <p class="text-gray-700 my-2 hover-text-900 ">Lorem ipsum dolor sit amet consectetur adipisicing
-                                elit.
-                                Praesentium quis.</p>
+                               Market Trend Statistics.</h1>
+
                         </div>
                     </div>
+
                     {{-- card two --}}
                     {{-- add timer details --}}
 
@@ -59,9 +58,21 @@
                     {{-- <img src="images/money.jpg" alt="" class="rounded-t-lg w-full"> --}}
                     <div class="p-6">
                         <h1
-                            class="md:text-1xl text-xl hover:text-indigo-600 transition duration-200  font-bold text-gray-900 ">
-                           Available Shares .</h1>
-                        <p class="text-gray-700 my-2 hover-text-900 ">Notification Panel .<br/>
+                            class="md:text-1xl text-xl hover:text-indigo-600 transition duration-200  text-center font-bold text-gray-900 ">Available Shares</h1>
+                           {{-- @forelse ($shares) --}}
+                           @if ($shares)
+                           <p class="text-gray-700 my-2 hover-text-900 ">Available Shares {{ $shares}}ksh</p>
+                           @else
+                           <p class="text-gray-700 my-2 hover-text-900 ">No Shares Currently</p>
+
+                           @endif
+
+
+
+                           {{-- @empty --}}
+
+                           {{-- @endforelse --}}
+                        {{-- <p class="text-gray-700 my-2 hover-text-900 ">Notification Panel .<br/> --}}
                         Admin panel</p>
                     </div>
                 </div>
