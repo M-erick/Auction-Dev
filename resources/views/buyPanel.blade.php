@@ -18,7 +18,7 @@
                 @endif
 
 
-                {{-- display error messages if any  --}}
+                {{-- display error messages if any --}}
                 @if ($errors->any())
                     <div class="w-4/5 self-center m-auto p-6">
                         <ul>
@@ -50,32 +50,36 @@
                 <div class="p-6">
                     {{-- pseoudocode .display currently
                         placed bid.Apply JS vuejs code to  computed properties --}}
-                        {{-- <h1 class="md:text-1xl text-xl   font-bold text-gray-900 ">
+                    {{-- <h1 class="md:text-1xl text-xl   font-bold text-gray-900 ">
                             currently bought shares history in table Form.</h1> --}}
-                            <h1 class="md:text-1xl text-xl hover:text-indigo-600 transition duration-200  font-bold text-gray-900 ">
-                                currently bought shares history in table Form.</h1>
+                    <h1 class="md:text-1xl text-xl hover:text-indigo-600 transition duration-200  font-bold text-gray-900 ">
+                        currently bought shares history in table Form.</h1>
 
                     @foreach ($usersData as $data)
 
 
-                    @if ($data->name == auth()->user()->name)
+                        @if ($data->name == auth()->user()->name)
 
 
 
-                        <p>Amount  placed :{{ $data->days }}</p>
+                            <p>Days :{{ ucwords($data->name) }}</p>
+                            <p>Days :{{ date('jS M Y', strtotime($data->created_at)) }}</p>
+
+
+                            <p>Days :{{ $data->days }}</p>
 
 
 
-                    <p>Amount  placed :{{ $data->amount }}</p>
-                    {{-- <p>Date  placed :{{ $temp[0] }}</p>
+                            <p>Amount placed :{{ $data->amount }}</p>
+                            {{-- <p>Date  placed :{{ $temp[0] }}</p>
                     <p>Date  placed :{{ $temp[1] }}</p> --}}
 
 
 
-                    {{-- <p>Amount  placed :{{ $data->created_at }}</p> --}}
+                            {{-- <p>Amount  placed :{{ $data->created_at }}</p> --}}
 
 
-                    @endif
+                        @endif
 
 
                     @endforeach
