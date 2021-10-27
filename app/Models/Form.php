@@ -10,12 +10,22 @@ use Illuminate\Support\Facades\Auth;
 class form extends Model
 {
     use HasFactory;
-    protected $fillable =['days',
-    'amount','name','user_id'];
-    protected $hidden = ['created_at','updated_at'
-];
+    protected $fillable = [
+        'days',
+        'amount', 'name', 'user_id'
+    ];
+    protected $hidden = [
+        'created_at', 'updated_at'
+    ];
 
-    public function user(){
+    public function getAmountAttribute($value)
+    {
+        return $value . 'ksh';
+    }
+   
+
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
 }
