@@ -20,7 +20,7 @@
 <body class=" h-screen antialiased leading-none font-sans">
     <div id="app">
         <div class="fixed   w-full z-50 top-0">
-            <header class="bg-gray-800 ">
+            <header class="h-24 bg-gray-800 ">
                 <div class="container mx-auto flex justify-between items-center pt-3 px-4">
                     <div>
                         <a href="{{ url('/') }}" class="text-lg font-semibold text-gray-100 no-underline">

@@ -4,7 +4,7 @@
 <main class="sm:container sm:mx-auto sm:max-w-lg sm:mt-10 mt-20">
     <div class="flex">
         <div class="w-full">
-            <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm ">
+            <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm mt-20">
 
                 <header class="font-semibold bg-gray-200 text-gray-700 py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
                     {{ __('Register') }}
@@ -39,6 +39,21 @@
                             value="{{ old('email') }}" required autocomplete="email">
 
                         @error('email')
+                        <p class="text-red-500 text-xs italic mt-4">
+                            {{ $message }}
+                        </p>
+                        @enderror
+                    </div>
+                    <div class="flex flex-wrap">
+                        <label for="phone Number" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
+                            {{ __('Phone Number') }}:
+                        </label>
+
+                        <input id="phone" type="number"
+                            class="form-input w-full @error('email') border-red-500 @enderror" name="phone"
+                            value="{{ old('phone') }}" required autocomplete="phone" placeholder="+254">
+
+                        @error('phone')
                         <p class="text-red-500 text-xs italic mt-4">
                             {{ $message }}
                         </p>

@@ -53,7 +53,7 @@
                     {{-- <h1 class="md:text-1xl text-xl   font-bold text-gray-900 ">
                             currently bought shares history in table Form.</h1> --}}
                     <h1 class="md:text-1xl text-xl hover:text-indigo-600 transition duration-200  font-bold text-gray-900 ">
-                        currently bought shares history in table Form.</h1>
+                        currently bought shares history</h1><!-- ignore the concept of displaying the values in tabular form -->
 
                     @foreach ($usersData as $data)
 
@@ -62,7 +62,7 @@
 
 
 
-                            <p>Days :{{ ucwords($data->name) }}</p>
+                            {{-- <p>Days :{{ ucwords($data->name) }}</p> --}}
                             <p>Days :{{ date('jS M Y', strtotime($data->created_at)) }}</p>
 
 
@@ -72,7 +72,7 @@
 
                             <p>Amount placed :{{ $data->amount }}</p>
                             {{-- <p>Date  placed :{{ $temp[0] }}</p>
-                    <p>Date  placed :{{ $temp[1] }}</p> --}}
+                            <p>Date  placed :{{ $temp[1] }}</p> --}}
 
 
 
@@ -94,16 +94,17 @@
 
             <div class="container w-full   bg-white border-t border-b border-gray-300 ">
                 {{-- <img src="images/dollars.webp" alt="" class=" w-full"> --}}
-                <div class="p-6">
+                <x-buysharestable/>
+                {{-- <div class="p-6">
                     <h1 class="md:text-1xl text-xl hover:text-indigo-600 transition duration-200  font-bold text-gray-900 ">
-                        DIsplay currently bought shares</h1>
+                        DIsplay currently plus history  bought shares in tabular form .Maximum inputs to be 10.Table should auto itself .</h1>
                     <p class="text-gray-700 my-2 ">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Praesentium quis.</p>
                     <p class="text-gray-700 my-2 "> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
                         deserunt, culpa mollitia quisquam minus
                         vel architecto pariatur maiores eligendi aperiam nobis numquam consequuntur sint modi, eaque
                         adipisci animi distinctio iusto.</p>
-                </div>
+                </div> --}}
             </div>
 
 

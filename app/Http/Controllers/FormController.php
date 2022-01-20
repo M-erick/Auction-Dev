@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Models\Form;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests\StoreRequest;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,24 +16,18 @@ class FormController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    //only authenticated users can view this page
+    public function __constructor() {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
-
-      //Returns an array of all events created that day
 
        return view('buyPanel')->with('usersData',
        Form::whereDate('created_at', '=' ,Carbon::today()->toDateString())->get());
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -43,32 +38,31 @@ class FormController extends Controller
     public function store(StoreRequest $request)
     {
         //StorRequest class handles use input validation
+        $amount = $request->input('amount');
 
 
 
-        Form::create([
-
-            'days'=>$request->input('days'),
-            'amount'=>$request->input('amount'),
-            'name'=>auth()->user()->name,
-            'user_id' =>auth()->user()->id
 
 
 
-        ]);
+            Form::create([
 
-        return redirect('/BuyShares')->with('message','Your bid has been placed');
-    }
+                'days'=>$request->input('days'),
+                'amount'=>$amount,
+                'name'=>auth()->user()->name,
+                'user_id' =>auth()->user()->id
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+
+
+            ]);
+
+            return redirect('/BuyShares')->with('message','Your bid has been placed');
+            //update table to contain sum of remaining shares after user purchases ;
+
+
+
+
+
     }
 
     /**

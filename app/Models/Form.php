@@ -22,10 +22,26 @@ class form extends Model
     {
         return $value . 'ksh';
     }
-   
+
 
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+    public  static function deterUserInput($value) {
+        $totalShares =Form::sum('amount');
+
+
+        if ( ($totalShares === null) && ($value > $totalShares)) {
+         redirect('/home')->with('message','No available shares currently');
+        }
+         $remainShares  = $totalShares - $value ;
+
+
+         return $remainShares;
+//    return  Form::updated([$totalShares =>$remainShares]);
+    //  return $remainShares;
+
+
     }
 }

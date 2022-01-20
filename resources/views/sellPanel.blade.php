@@ -8,14 +8,40 @@
             <div class="container bg-white  w-full border-b border-gray-300 ">
                 {{-- <img src="images/dollars.webp" alt="" class=" w-full"> --}}
                 <div class="p-6">
-                    <h1 class="md:text-1xl text-xl hover:text-indigo-600 transition duration-200  font-bold text-gray-900 ">
+                    {{-- Display if share is succcessful --}}
+                    @foreach ($timer as $data)
+                    @if ($data->name == auth()->user()->name)
+
+
+
+                    <p>Days :{{ ucwords($data->name) }}</p>
+                    <p>Days :{{ date('jS M Y', strtotime($data->created_at)) }}</p>
+
+
+                    <p>Days :{{ $data->days }}</p>
+
+
+
+                    <p>Amount placed :{{ $data->amount }}</p>
+                    {{-- <p>Date  placed :{{ $temp[0] }}</p>
+                    <p>Date  placed :{{ $temp[1] }}</p> --}}
+
+
+
+                    {{-- <p>Amount  placed :{{ $data->created_at }}</p> --}}
+
+
+                @endif
+
+                    @endforeach
+                    {{-- <h1 class="md:text-1xl text-xl hover:text-indigo-600 transition duration-200  font-bold text-gray-900 ">
                         This is Amazing for people to visit.</h1>
                     <p class="text-gray-700 my-2 ">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Praesentium quis.</p>
                     <p class="text-gray-700 my-2 "> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
                         deserunt, culpa mollitia quisquam minus
                         vel architecto pariatur maiores eligendi aperiam nobis numquam consequuntur sint modi, eaque
-                        adipisci animi distinctio iusto.</p>
+                        adipisci animi distinctio iusto.</p> --}}
                 </div>
             </div>
             {{-- card two --}}
@@ -55,15 +81,10 @@
 
                         </div>
                         <div>
-                            {{-- <button value="bid"
-                                class="border rounded-lg border-gray-200 shadow-lg p-3 mb-3  hover:shadow-2xl outline-none hidden"
-                                id="bid">Bid</button> --}}
-                                <button onclick = "window.location ='{{ route('sell') }}'" class="p-2 pl-5 pr-5 transition-colors duration-700 transform bg-indigo-500 hover:bg-blue-400 text-gray-100 text-lg rounded-lg fouce:border-4  border-indigo-300  hidden" id="bid">Bid</button>
 
-                            {{-- <button value="end"
-                                class="border rounded-lg border-gray-200 shadow-lg p-3 mb-3  hover:shadow-2xl outline-none">bid</button> --}}
-
-
+                            <button onclick="window.location ='{{ route('sell') }}'"
+                                class="p-2 pl-5 pr-5 transition-colors duration-700 transform bg-indigo-500 hover:bg-blue-400 text-gray-100 text-lg rounded-lg fouce:border-4  border-indigo-300  hidden"
+                                id="bid">Bid</button>
 
                         </div>
 
@@ -73,8 +94,7 @@
                 </div>
             </div>
 
-            <div class="container   bg-white min-h-screen w-full   border-t border-b border-gray-300 ">
-                {{-- <img src="images/dollars.webp" alt="" class=" w-full"> --}}
+            <div class="container   bg-white min-h-full w-full   border-t border-b border-gray-300 ">
                 <div class="p-6">
                     <h1 class="md:text-1xl text-xl hover:text-indigo-600 transition duration-200  font-bold text-gray-900 ">
                         This is Amazing for people to visit.</h1>
@@ -87,29 +107,24 @@
                 </div>
             </div>
             {{-- last card --}}
+            <div class="container   min-h-full w-full   bg-white border-t border-b border-gray-300 ">
+                <div class="p-6">
+                    <h1 class="md:text-1xl text-xl hover:text-indigo-600 transition duration-200  font-bold text-gray-900 ">
+                        DIsplay currently bought shares</h1>
+                    <p class="text-gray-700 my-2 ">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Praesentium quis.</p>
+                    <p class="text-gray-700 my-2 "> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
+                        deserunt, culpa mollitia quisquam minus
+                        vel architecto pariatur maiores eligendi aperiam nobis numquam consequuntur sint modi, eaque
+                        adipisci animi distinctio iusto.</p>
+                </div>
+            </div>
 
         </div>
 
-    </div>
-    </div>
-    </div>
-
-    <div class="container   bg-white min-h-screen w-full   border-t border-b border-gray-300 ">
-        {{-- <img src="images/dollars.webp" alt="" class=" w-full"> --}}
-        <div class="p-6">
-            <h1 class="md:text-1xl text-xl hover:text-indigo-600 transition duration-200  font-bold text-gray-900 ">
-                This is Amazing for people to visit.</h1>
-            <p class="text-gray-700 my-2 ">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Praesentium quis.</p>
-            <p class="text-gray-700 my-2 "> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat deserunt,
-                culpa mollitia quisquam minus
-                vel architecto pariatur maiores eligendi aperiam nobis numquam consequuntur sint modi, eaque adipisci animi
-                distinctio iusto.</p>
-        </div>
-    </div>
 
     </div>
-    </div>
+
     <script>
         //const daysEl = document.getElementById('days');
         const hoursEl = document.getElementById('hours');
@@ -162,14 +177,14 @@
 
             //toggle bewteen displaying the button when timer reaches  0 0 0
             if (hh == 0 && mm == 0 && ss == 0) {
-            //     if (bidBtn.style.display === "none") {
-            //     bidBtn.style.display = "block";
+                //     if (bidBtn.style.display === "none") {
+                //     bidBtn.style.display = "block";
 
 
-            // } else {
-            //     bidBtn.style.display = "none";
+                // } else {
+                //     bidBtn.style.display = "none";
 
-            // }
+                // }
                 start.setHours(start.getHours() + 3);
             }
             // bidBtn.addEventListener

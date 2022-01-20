@@ -3,9 +3,11 @@
     <div class="md:w-2/3 w-full px-4 text-white flex flex-col">
 
         <div class="flex mt-4 flex-col md:flex-row md:justify-between">
+            {{-- Embed a new statement --}}
             <p class="w-full md:w-2/3 text-gray-400">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                  Deleniti cumque expedita impedit quam rem possimus cum quae odio! Consectetur eum sequi officia fugiat. Corporis commodi consequatur nesciunt ex quae sit.</p>
-            <div class="w-44 pt-6 md:pt-0">
+
+                 <div class="w-44 pt-6 md:pt-0">
                 <a class="bg-red-500 justify-center text-center rounded-lg shadow px-10 py-3 flex items-center">Contact
                     US</a>
             </div>

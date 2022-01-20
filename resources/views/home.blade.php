@@ -60,6 +60,7 @@
                         <h1
                             class="md:text-1xl text-xl hover:text-indigo-600 transition duration-200  text-center font-bold text-gray-900 ">Available Shares</h1>
                            {{-- @forelse ($shares) --}}
+                           {{--  // displays the total amount of shares available .implemented in home controller --}}
                            @if ($shares)
                            <p class="text-gray-700 my-2 hover-text-900 ">Available Shares {{ $shares}}ksh</p>
                            @else
