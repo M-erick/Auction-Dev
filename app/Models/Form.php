@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\Auth;
 class form extends Model
 {
     use HasFactory;
+
+    protected $table = 'forms';
+    // protected $primaryKey = 'user_id';
     protected $fillable = [
         'days',
         'amount', 'name', 'user_id'
