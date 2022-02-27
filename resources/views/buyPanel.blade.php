@@ -14,7 +14,6 @@
                         </p>
 
                     </div>
-
                 @endif
 
 
@@ -27,12 +26,10 @@
 
                                     {{ $error }}
                                 </li>
-
                             @endforeach
                         </ul>
 
                     </div>
-
                 @endif
 
                 <div class="p-6">
@@ -45,56 +42,97 @@
             {{-- card two --}}
 
             <div class="container   bg-white w-full   border-t border-b border-gray-300 ">
-                {{-- <img src="images/dollars.webp" alt="" class=" w-full"> --}}
 
                 <div class="p-6">
-                    {{-- pseoudocode .display currently
-                        placed bid.Apply JS vuejs code to  computed properties --}}
-                    {{-- <h1 class="md:text-1xl text-xl   font-bold text-gray-900 ">
-                            currently bought shares history in table Form.</h1> --}}
                     <h1 class="md:text-1xl text-xl hover:text-indigo-600 transition duration-200  font-bold text-gray-900 ">
-                        currently bought shares history</h1><!-- ignore the concept of displaying the values in tabular form -->
-
-                    @foreach ($usersData as $data)
-
-
-                        @if ($data->name == auth()->user()->name)
-
-
-
-                            {{-- <p>Days :{{ ucwords($data->name) }}</p> --}}
-                            <p>Days :{{ date('jS M Y', strtotime($data->created_at)) }}</p>
-
-
-                            <p>Days :{{ $data->days }}</p>
-
-
-
-                            <p>Amount placed :{{ $data->amount }}</p>
-                            {{-- <p>Date  placed :{{ $temp[0] }}</p>
-                            <p>Date  placed :{{ $temp[1] }}</p> --}}
-
-
-
-                            {{-- <p>Amount  placed :{{ $data->created_at }}</p> --}}
-
-
-                        @endif
-
-
-                    @endforeach
-
-
-
-
-
+                        currently bought shares history</h1>
 
                 </div>
             </div>
 
             <div class="container w-full   bg-white border-t border-b border-gray-300 ">
-                {{-- <img src="images/dollars.webp" alt="" class=" w-full"> --}}
-                <x-buysharestable/>
+
+
+
+
+                <div>
+
+                    <!-- component -->
+                    <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 pr-10 lg:px-8">
+
+                        <div
+                            class="align-middle inline-block min-w-full shadow overflow-hidden bg-white shadow-dashboard px-8 pt-3 rounded-bl-lg rounded-br-lg">
+                            <table class="min-w-full">
+                                <thead>
+                                    <tr>
+                                        <th
+                                            class="px-6 py-3 border-b-2 border-gray-300 text-left leading-4 text-blue-500 tracking-wider">
+                                            SHARE_AMOUNT</th>
+                                        <th
+                                            class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">
+                                            USERNAME</th>
+                                        {{-- <th
+                                            class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">
+                                            Email</th> --}}
+                                        <th
+                                            class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">
+                                            Phone</th>
+                                        <th
+                                            class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">
+                                            Status</th>
+                                        <th
+                                            class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">
+                                            Date</th>
+                                        <th class="px-6 py-3 border-b-2 border-gray-300"></th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white">
+                                    @foreach ($usersData as $data)
+                                        @if ($data->user_id == auth()->user()->id)
+                                            <tr>
+                                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
+                                                    <div class="flex items-center">
+                                                        <div>
+                                                            <div class="text-sm leading-5 text-gray-800">
+                                                                {{ $data->amount }}</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
+                                                    <div class="text-sm leading-5 text-blue-900">{{ $data->name }}</div>
+                                                </td>
+                                                <td
+                                                    class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
+                                                    +2348106420637</td>
+                                                <td
+                                                    class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
+                                                    <span
+                                                        class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+                                                        <span aria-hidden
+                                                            class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
+                                                        <span class="relative text-xs">active</span>
+                                                    </span>
+                                                </td>
+                                                <td
+                                                    class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">
+                                                    September 12</td>
+                                                <td
+                                                    class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
+                                                    <button
+                                                        class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">Notify
+                                                        Seller</button>
+                                                </td>
+                                            </tr>
+                                        @endif
+                                    @endforeach
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
                 {{-- <div class="p-6">
                     <h1 class="md:text-1xl text-xl hover:text-indigo-600 transition duration-200  font-bold text-gray-900 ">
                         DIsplay currently plus history  bought shares in tabular form .Maximum inputs to be 10.Table should auto itself .</h1>
