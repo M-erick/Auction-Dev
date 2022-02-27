@@ -23,9 +23,13 @@ class FormController extends Controller
 
     public function index()
     {
+        // $shares = Form::where('user_id' ,'=', Auth::user()->id);
+        // dd($shares);
 
-       return view('buyPanel')->with('usersData',
-       Form::whereDate('created_at', '=' ,Carbon::today()->toDateString())->get());
+        $shares  = Form::all();
+
+       return view('buyPanel')->with('usersData',$shares);
+    //    Form::whereDate('created_at', '=' ,Carbon::today()->toDateString())->get());
     }
 
 
@@ -64,6 +68,20 @@ class FormController extends Controller
 
 
     }
+      /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+    //     $shares = Form::all($id);
+    //     dd($shares);
+
+    //   return view('buyPanel');
+    }
+
 
     /**
      * Show the form for editing the specified resource.
