@@ -63,14 +63,15 @@
                         <div
                             class="align-middle inline-block min-w-full shadow overflow-hidden bg-white shadow-dashboard px-8 pt-3 rounded-bl-lg rounded-br-lg">
                             <table class="min-w-full">
+                                {{-- display data that belongs to other user --}}
                                 <thead>
                                     <tr>
                                         <th
                                             class="px-6 py-3 border-b-2 border-gray-300 text-left leading-4 text-blue-500 tracking-wider">
                                             SHARE_AMOUNT</th>
-                                        <th
+                                        {{-- <th
                                             class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">
-                                            USERNAME</th>
+                                            USERNAME</th> --}}
                                         {{-- <th
                                             class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">
                                             Email</th> --}}
@@ -98,9 +99,9 @@
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
+                                                {{-- <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
                                                     <div class="text-sm leading-5 text-blue-900">{{ $data->name }}</div>
-                                                </td>
+                                                </td> --}}
                                                 <td
                                                     class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
                                                     +2348106420637</td>
